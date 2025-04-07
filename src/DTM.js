@@ -73,9 +73,9 @@ function reportSuccess(report) {
 }
 
 class DTM extends EventEmitter {
-    constructor(comName) {
+    constructor(comName, baudRate) {
         super();
-        this.dtmTransport = new DTMTransport(comName);
+        this.dtmTransport = new DTMTransport(comName, baudRate);
         this.dtmTransport.on('log', message => this.emit('transport', message));
         // Setting default paramters
         this.lengthPayload = 1;

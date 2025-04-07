@@ -119,9 +119,9 @@ const cmdToHex = cmd => {
 };
 
 class DTMTransport extends EventEmitter {
-    constructor(comName) {
+    constructor(comName, baudRate) {
         super();
-        this.port = new SerialPort({ path: comName, autoOpen: false, baudRate: 19200 });
+        this.port = new SerialPort({ path: comName, autoOpen: false, baudRate });
         this.waitForOpen = null;
         this.addListeners();
     }
